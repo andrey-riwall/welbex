@@ -1,32 +1,59 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+    <HeaderComp/>
+    <Router-View/>
+    <FooterComp/>
   </div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
 
-nav {
-  padding: 30px;
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 400;
+    line-height: 100%;
+    color: white;
 
-    &.router-link-exact-active {
-      color: #42b983;
+    list-style: none;
+    text-decoration: none;
+  }
+
+  body {
+    position: relative;
+    min-height: 100vh;
+    background: #000;
+  }
+
+  input, button {
+    outline: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  .container {
+    max-width: 1350px;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 420px) {
+    .container {
+      padding: 0 25px;
     }
   }
-}
 </style>
+
+<script>
+  import HeaderComp from './components/HeaderComp.vue';
+  import FooterComp from './components/FooterComp.vue';
+
+  export default {
+    components: { HeaderComp, FooterComp },
+}
+</script>
